@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://b34tq111rjgd2"]
+
+[ext_resource type="Texture2D" uid="uid://svpwagu08awm" path="res://sprites/card-template.png" id="1_iil8b"]
+[ext_resource type="Texture2D" uid="uid://vtq06r48fnhc" path="res://sprites/cost-background.png" id="2_08e23"]
+[ext_resource type="FontFile" uid="uid://bstose6hf1dp6" path="res://fonts/3_4_r_font_.ttf" id="3_k2e86"]
+[ext_resource type="Texture2D" uid="uid://dhyfauyw2oo0u" path="res://sprites/jade-sword.png" id="4_leu4a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yc4pf"]
+font = ExtResource("3_k2e86")
+font_size = 500
+
+[sub_resource type="LabelSettings" id="LabelSettings_quffd"]
+font = ExtResource("3_k2e86")
+font_size = 200
+font_color = Color(4.33177e-07, 0.54132, 0.435691, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dptpv"]
+font = ExtResource("3_k2e86")
+font_size = 200
+
+[node name="Card" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_iil8b")
+metadata/_edit_lock_ = true
+
+[node name="CostDisplay" type="Node2D" parent="."]
+position = Vector2(978, -565)
+
+[node name="CostBaseSprite" type="Sprite2D" parent="CostDisplay"]
+texture = ExtResource("2_08e23")
+metadata/_edit_lock_ = true
+
+[node name="CostLabel" type="Label" parent="CostDisplay"]
+offset_left = -869.0
+offset_top = -2676.0
+offset_right = -452.0
+offset_bottom = -1994.0
+text = "2"
+label_settings = SubResource("LabelSettings_yc4pf")
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="CardName" type="Node2D" parent="."]
+
+[node name="NameLabel" type="Label" parent="CardName"]
+offset_left = -2206.0
+offset_top = -2723.0
+offset_right = -586.0
+offset_bottom = -2480.0
+text = "Jade Sword"
+label_settings = SubResource("LabelSettings_quffd")
+
+[node name="CardImage" type="Sprite2D" parent="."]
+position = Vector2(-1058, -1029)
+texture = ExtResource("4_leu4a")
+
+[node name="CardDescription" type="Label" parent="."]
+offset_left = -2290.0
+offset_top = 521.0
+offset_right = -784.0
+offset_bottom = 788.0
+text = "Attack +1"
+label_settings = SubResource("LabelSettings_dptpv")
