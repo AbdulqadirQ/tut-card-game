@@ -1,19 +1,28 @@
 [gd_scene load_steps=2 format=3 uid="uid://byq3al04r2o7f"]
 
-[ext_resource type="PackedScene" uid="uid://b34tq111rjgd2" path="res://scenes/card.tscn" id="1_gv7ru"]
+[ext_resource type="Script" path="res://scripts/deck_n_hand.gd" id="1_iblf3"]
 
 [node name="DeckNHand" type="Node2D"]
+script = ExtResource("1_iblf3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Card" parent="CanvasLayer" instance=ExtResource("1_gv7ru")]
-position = Vector2(280, 331)
-card_name = "New Name"
-card_description = "New Description"
-card_cost = 5
+[node name="Spawn" type="Node2D" parent="CanvasLayer"]
+position = Vector2(424, 494)
 
-[node name="Card2" parent="CanvasLayer" instance=ExtResource("1_gv7ru")]
-position = Vector2(615, 331)
-card_name = "Another Name"
-card_description = "Another but longer Description"
-card_cost = 3
+[node name="Button" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 14.0
+offset_right = 117.0
+offset_bottom = 45.0
+text = "Create Card 1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 47.0
+offset_right = 117.0
+offset_bottom = 78.0
+text = "Create Card 2"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

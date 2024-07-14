@@ -10,9 +10,17 @@ class_name Card extends Node2D
 @onready var description: Label = $CardDescription
 
 func _ready():
+	set_values(card_cost, card_name, card_description)
+	visible = false
+
+func set_values(_cost: int, _name: String, _description: String):
+	card_name = _name
+	card_description = _description
+	card_cost = _cost
+	
 	cost_label.set_text(str(card_cost))
 	name_label.set_text(card_name)
 	description.set_text(card_description)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
