@@ -1,5 +1,19 @@
-[gd_scene format=3 uid="uid://byq3al04r2o7f"]
+[gd_scene load_steps=2 format=3 uid="uid://byq3al04r2o7f"]
+
+[ext_resource type="PackedScene" uid="uid://b34tq111rjgd2" path="res://scenes/card.tscn" id="1_gv7ru"]
 
 [node name="DeckNHand" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Card" parent="CanvasLayer" instance=ExtResource("1_gv7ru")]
+position = Vector2(280, 331)
+card_name = "New Name"
+card_description = "New Description"
+card_cost = 5
+
+[node name="Card2" parent="CanvasLayer" instance=ExtResource("1_gv7ru")]
+position = Vector2(615, 331)
+card_name = "Another Name"
+card_description = "Another but longer Description"
+card_cost = 3

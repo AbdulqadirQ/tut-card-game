@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b34tq111rjgd2"]
+[gd_scene load_steps=9 format=3 uid="uid://b34tq111rjgd2"]
 
 [ext_resource type="Texture2D" uid="uid://svpwagu08awm" path="res://sprites/card-template.png" id="1_iil8b"]
+[ext_resource type="Script" path="res://scripts/card.gd" id="1_nn4im"]
 [ext_resource type="Texture2D" uid="uid://vtq06r48fnhc" path="res://sprites/cost-background.png" id="2_08e23"]
 [ext_resource type="FontFile" uid="uid://bstose6hf1dp6" path="res://fonts/3_4_r_font_.ttf" id="3_k2e86"]
 [ext_resource type="Texture2D" uid="uid://dhyfauyw2oo0u" path="res://sprites/jade-sword.png" id="4_leu4a"]
@@ -19,7 +20,8 @@ font = ExtResource("3_k2e86")
 font_size = 200
 
 [node name="Card" type="Node2D"]
-metadata/_edit_lock_ = true
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_nn4im")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_iil8b")
@@ -45,21 +47,27 @@ metadata/_edit_lock_ = true
 [node name="CardName" type="Node2D" parent="."]
 
 [node name="NameLabel" type="Label" parent="CardName"]
-offset_left = -2206.0
-offset_top = -2723.0
-offset_right = -586.0
-offset_bottom = -2480.0
+offset_left = -2340.0
+offset_top = -2850.0
+offset_right = -520.0
+offset_bottom = -2420.0
 text = "Jade Sword"
 label_settings = SubResource("LabelSettings_quffd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="CardImage" type="Sprite2D" parent="."]
+[node name="CardImage" type="Node2D" parent="."]
+
+[node name="CardImageSprite" type="Sprite2D" parent="CardImage"]
 position = Vector2(-1058, -1029)
 texture = ExtResource("4_leu4a")
 
 [node name="CardDescription" type="Label" parent="."]
-offset_left = -2290.0
-offset_top = 521.0
-offset_right = -784.0
-offset_bottom = 788.0
+offset_left = -2340.0
+offset_top = 470.0
+offset_right = 150.0
+offset_bottom = 1300.0
 text = "Attack +1"
 label_settings = SubResource("LabelSettings_dptpv")
+autowrap_mode = 2
